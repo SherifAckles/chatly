@@ -1,23 +1,20 @@
-import React from 'react'
-
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 
-function FormFloatingBasicExample() {
+function FormGroupExample() {
   return (
-    <>
-      <FloatingLabel
-        controlId="floatingInput"
-        label="Email address"
-        className="mb-3"
-      >
-        <Form.Control type="email" placeholder="name@example.com" />
-      </FloatingLabel>
-      <FloatingLabel controlId="floatingPassword" label="Password">
+    <Form>
+        <main className='container main-container'>
+      <Form.Group className="mb-3" controlId="formGroupEmail">
+        <Form.Label>Email address</Form.Label>
+        <Form.Control type="email" placeholder="Enter email" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formGroupPassword">
+        <Form.Label>Password</Form.Label>
         <Form.Control type="password" placeholder="Password" />
-      </FloatingLabel>
-    </>
+      </Form.Group>
+      </main>
+    </Form>
   );
 }
 
-export default FormFloatingBasicExample;
+export default FormGroupExample;
