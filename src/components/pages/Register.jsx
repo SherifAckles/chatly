@@ -1,35 +1,46 @@
 import Form from "react-bootstrap/Form";
-import "./register.css";
 import { Button } from "react-bootstrap";
-
+import "./register.css";
 function FormGroupExample() {
   return (
-    <Form id="register">
-      <main className="container main-container  p-5 w-50  bg-dark br-2rem">
-        <Form.Group className="mb-3" controlId="formGroupEmail">
+    <main className="main-container">
+      <Form>
+        <Form.Group
+          className="mb-3 container-form-group"
+          controlId="formGroupEmail"
+        >
           <Form.Label>Email address</Form.Label>
-          <Form.Control className="email" type="email" placeholder="Enter email"  />
+          <Form.Control
+            className="email"
+            type="email"
+            placeholder="Enter email"
+          />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formGroupPassword">
+        <Form.Group
+          className="mb-3 container-form-group"
+          controlId="formGroupPassword"
+        >
           <Form.Label>Password</Form.Label>
-          <Form.Control className="email" type="password" placeholder="Password"  />
+          <Form.Control
+            className="email"
+            type="password"
+            placeholder="Password"
+          />
         </Form.Group>
-        
+
         <Form.Label>Profile picture</Form.Label>
-        
+
         <div>
-        <Form.Control className="" type="file" variant="light" size="md" />
-            
-          
+          <Form.Control className="" type="file" variant="light" size="md" />
         </div>
-        
+
         <div>
-          <Button className="mt-4" variant="light" size="md" >
+          <Button className="d-grid mt-5 col-6 mx-auto signin" size="md">
             Sign in
           </Button>
         </div>
-      </main>
-    </Form>
+      </Form>
+    </main>
   );
 }
 
