@@ -7,7 +7,7 @@ function ColorSchemesExample() {
     <>
       <Navbar bg="dark" variant="dark" expand = "lg">
         <Container>
-          <Navbar.Brand href="#home">Chat App</Navbar.Brand>
+          <Navbar.Brand href="#home">Chatly</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
         
