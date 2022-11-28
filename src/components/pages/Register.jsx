@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 
 function FormGroupExample() {
   return (
-    <Form>
+    <Form id="register">
       <main className="container main-container  p-5 w-50  bg-dark br-2rem">
         <Form.Group className="mb-3" controlId="formGroupEmail">
           <Form.Label>Email address</Form.Label>
