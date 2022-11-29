@@ -1,0 +1,15 @@
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container-home {
+  display: flex;
+  border: 1px solid black;
+  width: 65%;
+  height: 80%;
+  border-radius: 1rem;
+  overflow: hidden;
+}
