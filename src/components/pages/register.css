@@ -26,9 +26,20 @@ main {
 }
 
 .avatar {
-  width: 2rem;
+  width: 25%;
   cursor: pointer;
+
+  margin: 0 0 1rem 130px;
 }
+
+/* MD devices */
+@media screen and (max-width: 1024px) {
+  .avatar {
+    width: 25%;
+    margin: 0 0 1rem 65px;
+  }
+}
+
 
 /* SM devices */
 @media screen and (max-width: 600px) {
@@ -40,5 +51,10 @@ main {
   }
   .y {
     color: #fff;
+  }
+
+  .avatar {
+    width: 25%;
+    margin: 0 0 1rem 90px;
   }
 }

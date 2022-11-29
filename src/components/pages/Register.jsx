@@ -40,7 +40,7 @@ function FormGroupExample() {
         <div>
           <Form.Control style={{display:"none"}} type="file" id="file" variant="light" size="md" />
           
-        <label htmlFor="file"><img src={Avatar} className= "avatar" alt="avatar pic" /></label>
+        <label htmlFor="file"><img src={Avatar} className= "avatar " alt="avatar pic" /></label>
         </div>
 
         <div>
