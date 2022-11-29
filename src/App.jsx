@@ -1,5 +1,6 @@
 import React from "react";
 import Register from "./components/pages/Register";
+import Login from "./components/pages/Login";
 import Nav from "./components/nav/Nav";
 import { auth } from "./firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -10,7 +11,8 @@ const App = () => {
   return (
     <div>
       <Nav />
-      <Register />
+      <Register/>
+      <Login/>
     </div>
   );
 };
