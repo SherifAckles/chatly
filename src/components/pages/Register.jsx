@@ -13,7 +13,7 @@ function FormGroupExample() {
           <Form.Control
             className="email"
             type="email"
-            placeholder="Enter email"
+            placeholder="Enter email" required
           />
         </Form.Group>
         <Form.Group
@@ -24,7 +24,7 @@ function FormGroupExample() {
           <Form.Control
             className="email"
             type="password"
-            placeholder="Password"
+            placeholder="Password" required
           />
         </Form.Group>
 
