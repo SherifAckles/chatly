@@ -4,7 +4,7 @@ import "./register.css";
 function FormGroupExample() {
   return (
     <main className="main-container">
-      <span className="logo d-flex justify-content-center">Chatly</span>
+      <span className="logo d-flex justify-content-center">Chatl <span className="y">y</span></span>
       <Form>
         <span className="title d-flex justify-content-center m-2">
           Register
