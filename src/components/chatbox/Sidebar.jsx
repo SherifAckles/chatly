@@ -1,9 +1,12 @@
 import React from 'react'
+import Navbar from "../../components/chatbox/Navbar"
 import "./sidebar.css";
 
 const Sidebar = () => {
   return (
-    <div className='sidebar'>sidebar</div>
+    <div className='sidebar'>
+      <Navbar/>
+    </div>
   )
 }
 
