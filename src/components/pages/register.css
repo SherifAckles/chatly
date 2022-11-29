@@ -1,7 +1,7 @@
 main {
   width: 50%;
   margin: 7% auto;
-  padding: 5% 15%;
+  padding: 0 15%;
   background: rgba(9, 47, 120, 100);
   color: #fff;
   border-radius: 2rem;
@@ -12,6 +12,14 @@ main {
 .container-form-group {
   border-bottom: 1px solid #000;
   border-radius: 10px;
+}
+
+.logo {
+  font-size: larger;
+  font-weight: 600;
+  text-decoration: underline;
+  line-height: 2;
+  letter-spacing: 4px;
 }
 
 /* SM devices */

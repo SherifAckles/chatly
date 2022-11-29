@@ -4,7 +4,11 @@ import "./register.css";
 function FormGroupExample() {
   return (
     <main className="main-container">
+      <span className="logo d-flex justify-content-center">Chatly</span>
       <Form>
+        <span className="title d-flex justify-content-center m-2">
+          Register
+        </span>
         <Form.Group
           className="mb-3 container-form-group"
           controlId="formGroupEmail"
@@ -13,7 +17,8 @@ function FormGroupExample() {
           <Form.Control
             className="email"
             type="email"
-            placeholder="Enter email" required
+            placeholder="Enter email"
+            required
           />
         </Form.Group>
         <Form.Group
@@ -24,7 +29,8 @@ function FormGroupExample() {
           <Form.Control
             className="email"
             type="password"
-            placeholder="Password" required
+            placeholder="Password"
+            required
           />
         </Form.Group>
 
@@ -35,11 +41,12 @@ function FormGroupExample() {
         </div>
 
         <div>
-          <Button className="d-grid mt-5 col-6 mx-auto signin" size="md">
-            Sign in
+          <Button className="d-grid mt-4 col-6 mx-auto" size="md">
+            Sign up
           </Button>
         </div>
       </Form>
+      <p className="d-flex justify-content-center mt-2">Already have Chatly account? login</p>
     </main>
   );
 }
