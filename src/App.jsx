@@ -11,8 +11,8 @@ const App = () => {
   return (
     <div>
       <Nav />
-      <Register/>
-      <Login/>
+      <Register />
+      <Login />
     </div>
   );
 };

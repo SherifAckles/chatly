@@ -1,11 +1,13 @@
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 import "./register.css";
-import Avatar from "../../assets/avatar.png"
-function FormGroupExample() {
+import Avatar from "../../assets/avatar.png";
+function Register() {
   return (
     <main className="main-container">
-      <span className="logo d-flex justify-content-center">Chatl <span className="y">y</span></span>
+      <span className="logo d-flex justify-content-center">
+        Chatl <span className="y">y</span>
+      </span>
       <Form>
         <span className="title d-flex justify-content-center m-2">
           Register
@@ -38,9 +40,17 @@ function FormGroupExample() {
         <Form.Label>Add a profile picture</Form.Label>
 
         <div>
-          <Form.Control style={{display:"none"}} type="file" id="file" variant="light" size="md" />
-          
-        <label htmlFor="file"><img src={Avatar} className= "avatar " alt="avatar pic" /></label>
+          <Form.Control
+            style={{ display: "none" }}
+            type="file"
+            id="file"
+            variant="light"
+            size="md"
+          />
+
+          <label htmlFor="file">
+            <img src={Avatar} className="avatar " alt="avatar pic" />
+          </label>
         </div>
 
         <div>
@@ -56,4 +66,4 @@ function FormGroupExample() {
   );
 }
 
-export default FormGroupExample;
+export default Register;
