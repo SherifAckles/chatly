@@ -1,6 +1,7 @@
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 import "./register.css";
+import Avatar from "../../assets/avatar.png"
 function FormGroupExample() {
   return (
     <main className="main-container">
@@ -34,14 +35,16 @@ function FormGroupExample() {
           />
         </Form.Group>
 
-        <Form.Label>Profile picture</Form.Label>
+        <Form.Label>Add a profile picture</Form.Label>
 
         <div>
-          <Form.Control className="" type="file" variant="light" size="md" />
+          <Form.Control style={{display:"none"}} type="file" id="file" variant="light" size="md" />
+          
+        <label htmlFor="file"><img src={Avatar} className= "avatar" alt="avatar pic" /></label>
         </div>
 
         <div>
-          <Button className="d-grid mt-4 col-6 mx-auto" size="md">
+          <Button className="d-grid mt-2 col-6 mx-auto" size="md">
             Sign up
           </Button>
         </div>

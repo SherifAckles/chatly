@@ -17,11 +17,17 @@ main {
   letter-spacing: 4px;
 }
 
+/*  the letter "y" in the chatly brand  */
 .y {
   color: #000;
   font-weight: 900;
   font-style: oblique;
   font-stretch: ultra-expanded;
+}
+
+.avatar {
+  width: 2rem;
+  cursor: pointer;
 }
 
 /* SM devices */
