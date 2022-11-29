@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   height: 4rem;
-  padding: 1rem;
+  padding: 10px;
   background-color: var(--color-bg-light)
 }
 
@@ -16,7 +16,8 @@
   gap: 1rem;
 }
 
-img{
-  width: 10%;
-  background-color: var(--color-bg-dark);
+.user-avatar{
+  width: 35px;
+  height: 35px;
+  
 }
