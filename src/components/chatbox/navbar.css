@@ -6,3 +6,17 @@
   padding: 1rem;
   background-color: var(--color-bg-light)
 }
+
+.logo-navbar{
+  font-weight: bold;
+}
+
+.user{
+  display: flex;
+  gap: 1rem;
+}
+
+img{
+  width: 10%;
+  background-color: var(--color-bg-dark);
+}
