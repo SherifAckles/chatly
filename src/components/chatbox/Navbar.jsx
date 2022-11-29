@@ -3,11 +3,11 @@ import "./navbar.css"
 
 const Navbar = () => {
   return (
-    <div className='navbar'>
+    <div className='navbar-container'>
       <span className='logo-navbar'>Chatly</span>
       <div className="user">
         <img src="" alt="" />
-        <span>Sheriff</span>
+        <span>john</span>
         <button>logout</button>
       </div>
 

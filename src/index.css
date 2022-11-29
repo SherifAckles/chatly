@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* colors */
+    --color-bg-light:#009EFF;
+    --color-white: #fff;
+    --color-bg-dark:rgba(9, 47, 120, 100);
+    --color-bg-sec:#2b3a55
+}
+html {
+    scroll-behavior: smooth;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+  }

@@ -2,7 +2,7 @@ main {
   width: 50%;
   margin: 7% auto;
   padding: 1% 14%;
-  background: rgba(9, 47, 120, 100);
+  background: var(--color-bg-dark);
   color: #fff;
   border-radius: 5rem;
   opacity: 85%;
