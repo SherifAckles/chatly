@@ -46,7 +46,9 @@ function FormGroupExample() {
           </Button>
         </div>
       </Form>
-      <p className="d-flex justify-content-center mt-2">Already have Chatly account? login</p>
+      <p className="d-flex justify-content-center m-4">
+        Already have Chatly account? login
+      </p>
     </main>
   );
 }
