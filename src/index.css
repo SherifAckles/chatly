@@ -6,10 +6,12 @@
 
 :root {
   /* colors */
-  --color-bg-light: #009eff;
+  --color-bg-light: #009dffe9;
+  --color-bg-lighter:#009dff;
   --color-white: #fff;
   --color-bg-dark: rgba(9, 47, 120, 100);
   --color-bg-sec: #2b3a55;
+  --color-light-grey :lightgrey ;
 }
 html {
   scroll-behavior: smooth;

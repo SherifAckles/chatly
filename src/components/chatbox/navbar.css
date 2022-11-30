@@ -4,7 +4,8 @@
   align-items: center;
   height: 4rem;
   padding: 10px;
-  background-color: var(--color-bg-light)
+  background-color: var(--color-bg-light);
+  color: var(--color-light-grey);
 }
 
 .logo-navbar{
