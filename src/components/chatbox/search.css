@@ -23,3 +23,13 @@
 .userchat img {
   width: 50px;
 }
+
+.userchat-info span{
+font-size: 18px;
+font-weight: 500;
+}
+
+.userchat-info p{
+  font-size: 14px;
+  color:var(--bs-gray) !important; 
+}
