@@ -1,6 +1,10 @@
 .form-control {
-background-color: transparent !important;
+  background-color: transparent !important;
   border-radius: 0 !important;
   padding: 0.5rem !important;
-  
+  color: var(--color-white) !important;
+}
+
+.userchat img {
+  width: 50px;
 }
