@@ -1,14 +1,39 @@
-.writemessage{
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-    height: 50px;
-    background-color: var(--color-bg-lighter);
-    padding: 10px;
+.writemessage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 90px;
+  background-color: var(--color-white);
+  padding: 10px;
 }
 
-.send img{
-    display: inline-block;
-    width: 20px;
-    height: 20px;
+.send {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.send img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.send button{
+    padding: 10px 15px;
+    border: none;
+    color: var(--color-white);
+    background-color: var(--color-bg-lighter);
+}
+
+.writemessage input {
+  width: 100%;
+  border: none !important;
+  outline: none !important;
+  color: var(--color-light-grey);
+  font-size: 18px;
+}
+.writemessage placeholder {
+  color: var(--color-light-grey);
 }

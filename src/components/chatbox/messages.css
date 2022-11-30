@@ -1,5 +1,6 @@
 .messages {
   background-color: var(--color-white);
   padding: 10px;
-  height: calc(100% - 100px);
+  height: calc(100% - 140px);
+  overflow: scroll;
 }
