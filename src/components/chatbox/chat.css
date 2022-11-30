@@ -5,7 +5,7 @@
 .chatinfo {
   display: flex;
   align-items: center;
-  height: 4rem;
+  height: 50px;
   padding: 10px;
   background-color: var(--color-bg-lighter);
   color: var(--color-light-grey);

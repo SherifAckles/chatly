@@ -1,0 +1,14 @@
+.writemessage{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+    height: 50px;
+    background-color: var(--color-bg-lighter);
+    padding: 10px;
+}
+
+.send img{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
