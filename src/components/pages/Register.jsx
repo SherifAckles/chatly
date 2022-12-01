@@ -2,17 +2,29 @@ import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 import "./register.css";
 import Avatar from "../../assets/avatar.png";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
+const auth = getAuth();
+createUserWithEmailAndPassword(auth, email, password)
+.then((userCredential) => {
+  // Signed in 
+  const user = userCredential.user;
+  // ...
+})
+.catch((error) => {
+  const errorCode = error.code;
+  const errorMessage = error.message;
+  // ..
+});
 function Register() {
-  const handleSubmit = (e)=> {
-    e.preventDefault()
-    console.log(e.target[0].value)
-}
+  
+  
 return (
   <main className="main-container">
       <span className="logo d-flex justify-content-center">
         Chatl <span className="y">y</span>
       </span>
-      <Form onSubmit={handleSubmit}>
+      <Form >
         <span className="title d-flex justify-content-center m-2">
           Register
         </span>
