@@ -1,28 +1,48 @@
+import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 import "./register.css";
-import Avatar from "../../assets/avatar.png";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-
-// const auth = getAuth();
-// // createUserWithEmailAndPassword(auth, email, password)
-// .then((userCredential) => {
-//   // Signed in
-//   const user = userCredential.user;
-//   // ...
-// })
-// .catch((error) => {
-//   const errorCode = error.code;
-//   const errorMessage = error.message;
-//   // ..
-// });
+import Avatar from "assets/avatar.png";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth, storage } from "//firebase";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { async } from "@firebase/util";
+import { doc, setDoc } from "firebase/firestore";
 function Register() {
-  const handleSubmit = (e) => {
+  const [err, setErr] = useState(false);
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const email = e.target[0].value;
     const password = e.target[1].value;
     const file = e.target[2].files[0];
-    // test working console.log(e.target[0].value, e.target[1].value, e.target[2].value)
+    console.log(e.target[0].value, e.target[1].value, e.target[2].value);
+
+    try {
+      const res = await createUserWithEmailAndPassword(auth, email, password);
+
+      const storageRef = ref(storage, email);
+
+      const uploadTask = uploadBytesResumable(storageRef, file);
+
+      uploadTask.on(
+        (error) => {
+          // Handle unsuccessful uploads
+        },
+        () => {
+          setErr(true);
+          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+            await updateProfile(res.user, { email, photoURL: downloadURL });
+            await setDoc(doc(db,"users", res.user.uid), {
+              uid: res.user.uid,
+              email,
+              photoURL: downloadURL,
+            });
+          });
+        }
+      );
+    } catch (err) {
+      setErr(true);
+    }
   };
   return (
     <main className="main-container">
@@ -78,6 +98,7 @@ function Register() {
           <Button type="submit" className="d-grid mt-2 col-6 mx-auto" size="md">
             Sign up
           </Button>
+          {err && <span>Something went wrong</span>}
         </div>
       </Form>
       <p className="d-flex justify-content-center m-4">
