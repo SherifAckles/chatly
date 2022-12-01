@@ -12,10 +12,7 @@ const App = () => {
   console.log(user);
   return (
     <div>
-      <Nav />
       <Register />
-      <Login />
-      <Home />
     </div>
   );
 };

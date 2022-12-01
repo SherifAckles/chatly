@@ -4,14 +4,14 @@ import "./message.css";
 
 const message = () => {
   return (
-    <div className='message'>
+    <div className='message owner'>
       <div className="message-info">
         <img src={User1} alt="" />
         <span>just now</span>
       </div>
         <div className="messageContent">
           <p>hello</p>
-          {/* <img src={User1} alt="" /> */}
+           <img src={User1} alt="" /> 
         </div>
     </div>
   )

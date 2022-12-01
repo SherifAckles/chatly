@@ -3,38 +3,42 @@ import { Button } from "react-bootstrap";
 import "./register.css";
 import Avatar from "../../assets/avatar.png";
 function Register() {
-  return (
-    <main className="main-container">
+  const handleSubmit = (e)=> {
+    e.preventDefault()
+    console.log(e.target[0].value)
+}
+return (
+  <main className="main-container">
       <span className="logo d-flex justify-content-center">
         Chatl <span className="y">y</span>
       </span>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <span className="title d-flex justify-content-center m-2">
           Register
         </span>
-        <Form.Group
+        <Form.Group 
           className="mb-3 container-form-group"
           controlId="formGroupEmail"
-        >
+          >
           <Form.Label>Email address</Form.Label>
           <Form.Control
             className="email"
             type="email"
             placeholder="Enter email"
             required
-          />
+            />
         </Form.Group>
         <Form.Group
           className="mb-3 container-form-group"
           controlId="formGroupPassword"
-        >
+          >
           <Form.Label>Password</Form.Label>
           <Form.Control
             className="email"
             type="password"
             placeholder="Password"
             required
-          />
+            />
         </Form.Group>
 
         <Form.Label>Add a profile picture</Form.Label>
@@ -46,7 +50,7 @@ function Register() {
             id="file"
             variant="light"
             size="md"
-          />
+            />
 
           <label htmlFor="file">
             <img src={Avatar} className="avatar " alt="avatar pic" />
