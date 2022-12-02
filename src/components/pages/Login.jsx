@@ -17,7 +17,7 @@ function Login() {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("./")
+      navigate("/")
     } catch (err) {
       setErr(true);
     }
@@ -54,7 +54,7 @@ function Login() {
           />
         </Form.Group>
         <div>
-          <Button className="d-grid mt-2 col-6 mx-auto" size="md">
+          <Button type="submit" className="d-grid mt-2 col-6 mx-auto" size="md">
             Sign in
           </Button>
           {err && <span>Something went wrong</span>}
