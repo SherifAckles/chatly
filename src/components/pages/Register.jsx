@@ -4,10 +4,10 @@ import { Button } from "react-bootstrap";
 import "./register.css";
 import Avatar from "assets/avatar.png";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth, storage } from "//firebase";
+import { auth, db, storage } from "../../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { async } from "@firebase/util";
-import { doc, setDoc } from "firebase/firestore";
+// import { async } from "@firebase/util";
+import { doc, setDoc } from "firebase/firestore/lite";
 function Register() {
   const [err, setErr] = useState(false);
   const handleSubmit = async (e) => {
@@ -21,7 +21,7 @@ function Register() {
       const res = await createUserWithEmailAndPassword(auth, email, password);
 
       const storageRef = ref(storage, email);
-
+      
       const uploadTask = uploadBytesResumable(storageRef, file);
 
       uploadTask.on(

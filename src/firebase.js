@@ -3,20 +3,25 @@ import { initializeApp } from "firebase/app";
 
 import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore/lite";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCa33Ihjd7S9HTVcze6qSdhddPddA2IiZI",
-  authDomain: "chatly-bd612.firebaseapp.com",
-  projectId: "chatly-bd612",
-  storageBucket: "chatly-bd612.appspot.com",
-  messagingSenderId: "369533038593",
-  appId: "1:369533038593:web:b85028df7fd04ba5389000"
+  apiKey: "AIzaSyCih-jQRQFQ1iIHVMKqRo3yLRz3UNDf9m0",
+
+  authDomain: "chatly101.firebaseapp.com",
+
+  projectId: "chatly101",
+
+  storageBucket: "chatly101.appspot.com",
+
+  messagingSenderId: "689706778523",
+
+  appId: "1:689706778523:web:9d31568f9005d3a2fa2b3e",
 };
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
+export const auth = getAuth();
 export const storage = getStorage();
 export const db = getFirestore();
