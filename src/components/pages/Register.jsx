@@ -7,43 +7,59 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db, storage } from "../../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 // import { async } from "@firebase/util";
-import { doc, setDoc } from "firebase/firestore/lite";
+import { doc, setDoc } from "firebase/firestore";
+// import { useNavigate, Link } from "react-router-dom";
+
 function Register() {
   const [err, setErr] = useState(false);
   const handleSubmit = async (e) => {
+    // setLoading(true);
     e.preventDefault();
     const email = e.target[0].value;
     const password = e.target[1].value;
     const file = e.target[2].files[0];
-    console.log(e.target[0].value, e.target[1].value, e.target[2].value);
 
     try {
+      //Create user
       const res = await createUserWithEmailAndPassword(auth, email, password);
 
-      const storageRef = ref(storage, email);
-      
-      const uploadTask = uploadBytesResumable(storageRef, file);
+      //Create a unique image name
+      const date = new Date().getTime();
+      const storageRef = ref(storage, `${file + date}`);
 
-      uploadTask.on(
-        (error) => {
-          // Handle unsuccessful uploads
-        },
-        () => {
-          setErr(true);
-          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-            await updateProfile(res.user, { email, photoURL: downloadURL });
-            await setDoc(doc(db,"users", res.user.uid), {
-              uid: res.user.uid,
+      await uploadBytesResumable(storageRef, file).then(() => {
+        getDownloadURL(storageRef).then(async (downloadURL) => {
+          try {
+            //Update profile
+            await updateProfile(res.user, {
               email,
               photoURL: downloadURL,
             });
-          });
-        }
-      );
+            //create user on firestore
+            await setDoc(doc(db, "users", res.user.uid), {
+              uid: res.user.uid,
+              
+              email,
+              photoURL: downloadURL,
+            });
+
+            //create empty user chats on firestore
+            await setDoc(doc(db, "userChats", res.user.uid), {});
+            // navigate("/");
+          } catch (err) {
+            console.log(err);
+            setErr(true);
+            // setLoading(false);
+          }
+        });
+      });
     } catch (err) {
       setErr(true);
+      // setLoading(false);
     }
   };
+
+ 
   return (
     <main className="main-container">
       <span className="logo d-flex justify-content-center">
