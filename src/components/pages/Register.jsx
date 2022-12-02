@@ -6,14 +6,15 @@ import Avatar from "assets/avatar.png";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, db, storage } from "../../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-// import { async } from "@firebase/util";
-import { doc, setDoc } from "firebase/firestore";
-// import { useNavigate, Link } from "react-router-dom";
+import { doc, setDoc } from "firebase/firestore/lite";
+import { useNavigate, Link } from "react-router-dom";
 
 function Register() {
   const [err, setErr] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
-    // setLoading(true);
+    setLoading(true);
     e.preventDefault();
     const email = e.target[0].value;
     const password = e.target[1].value;
@@ -38,28 +39,27 @@ function Register() {
             //create user on firestore
             await setDoc(doc(db, "users", res.user.uid), {
               uid: res.user.uid,
-              
+
               email,
               photoURL: downloadURL,
             });
 
             //create empty user chats on firestore
             await setDoc(doc(db, "userChats", res.user.uid), {});
-            // navigate("/");
+            navigate("./");
           } catch (err) {
             console.log(err);
             setErr(true);
-            // setLoading(false);
+            setLoading(false);
           }
         });
       });
     } catch (err) {
       setErr(true);
-      // setLoading(false);
+      setLoading(false);
     }
   };
 
- 
   return (
     <main className="main-container">
       <span className="logo d-flex justify-content-center">
@@ -111,14 +111,20 @@ function Register() {
         </div>
 
         <div>
-          <Button type="submit" className="d-grid mt-2 col-6 mx-auto" size="md">
+          <Button
+            disabled={loading}
+            type="submit"
+            className="d-grid mt-2 col-6 mx-auto"
+            size="md"
+          >
             Sign up
           </Button>
+          {loading && "Uploading and compressing the image please wait..."}
           {err && <span>Something went wrong</span>}
         </div>
       </Form>
       <p className="d-flex justify-content-center m-4">
-        Already have Chatly account? login
+        Already have Chatly account? <Link to="/register">Login</Link>
       </p>
     </main>
   );
