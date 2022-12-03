@@ -124,7 +124,7 @@ function Register() {
         </div>
       </Form>
       <p className="d-flex justify-content-center m-4">
-        Already have Chatly account? <Link to="/register">Login</Link>
+        Already have Chatly account? <Link to="/Login">Login</Link>
       </p>
     </main>
   );
