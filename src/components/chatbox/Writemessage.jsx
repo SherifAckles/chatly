@@ -81,7 +81,7 @@ const [text, setText] = useState("");
       <input type="text" placeholder="Send a message..." onChange={e=>setText(e.target.value)}/>
       <div className="send">
         <img src={Attach} alt="" />
-        <input type="file" style={{ display: "none" }} id="file" />
+        <input type="file" style={{ display: "none" }} id="file" onChange={e=>setImg(e.target.files[0])}/>
         <label htmlFor="file">
           <img src={Image} alt="" />
         </label>
