@@ -10,7 +10,7 @@ const Chat = () => {
     <div className="chat">
       <div className="chatinfo">
         {/* username */}
-        <span>{data.user?.displayName}</span>
+        <span>{data.user?.email}</span>
       </div>
       <Messages />
       <Writemessage/>

@@ -25,7 +25,7 @@ const Search = () => {
   const handleSearch = async () => {
     const q = query(
       collection(db, "users"),
-      where("displayName", "==", username)
+      where("email", "==", username)
     );
 
     try {
@@ -59,7 +59,7 @@ const Search = () => {
         await updateDoc(doc(db, "userChats", currentUser.uid), {
           [combinedId + ".userInfo"]: {
             uid: user.uid,
-            displayName: user.displayName,
+            eail: user.email,
             photoURL: user.photoURL,
           },
           [combinedId + ".date"]: serverTimestamp(),
@@ -68,7 +68,7 @@ const Search = () => {
         await updateDoc(doc(db, "userChats", user.uid), {
           [combinedId + ".userInfo"]: {
             uid: currentUser.uid,
-            displayName: currentUser.displayName,
+            email: currentUser.email,
             photoURL: currentUser.photoURL,
           },
           [combinedId + ".date"]: serverTimestamp(),
@@ -77,32 +77,31 @@ const Search = () => {
     } catch (err) {}
 
     setUser(null);
-    setUsername("")
+    setUsername("");
   };
   return (
     <div>
       <div className="search input-group flex-nowrap">
         <input
           type="text"
-          class="form-control"
+          className="form-control"
           placeholder="Username"
+          onChange={(e) => setUsername(e.target.value)}
+          onKeyDown={handleKey}
           aria-label="Username"
           aria-describedby="addon-wrapping"
-          onKeyDown={handleKey}
-          onChange={(e) => setUsername(e.target.value)}
           value={username}
         />
       </div>
       {err && <span>User not found!</span>}
-      {user && (
-        <div className="userchat">
-          <img src={user.photoURL} alt="user2" />
-          <div className="userchat-info">
-            <span>{user.displayName}</span>
-          
+      {user && 
+        <div className="userChat" onClick={handleSelect} >
+          <img src={user.photoURL} alt="" />
+          <div className="userChatInfo">
+            <span>{user.email}</span>
           </div>
         </div>
-      )}
+      }
     </div>
   );
 };

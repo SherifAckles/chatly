@@ -5,7 +5,7 @@
   color: var(--color-white) !important;
 }
 
-.userchat{
+.userChat{
     display: flex;
     align-items: center;
     padding: 10px;
@@ -15,21 +15,21 @@
 
 }
 
-.userchat:hover{
+.userChat:hover{
     background-color: var(--color-bg-light);
 }
 
 
-.userchat img {
+.userChat img {
   width: 50px;
 }
 
-.userchat-info span{
+.userChatInfo span{
 font-size: 18px;
 font-weight: 500;
 }
 
-.userchat-info p{
+.userChatInfo p{
   font-size: 14px;
   color:var(--bs-gray) !important; 
 }
