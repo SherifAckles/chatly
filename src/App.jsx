@@ -5,7 +5,7 @@ import Register from "./components/pages/Register";
  import Home from "./components/pages/Home";
  import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
  import { useContext } from "react";
- import { AuthContext } from "./context/AuthContext";
+ import { AuthContext } from "././context/AuthContext";
  
 
 const App = () => {
@@ -22,6 +22,7 @@ const App = () => {
   
   return (
     <BrowserRouter>
+    <Nav />
       <Routes>
         <Route path="/">
           <Route
