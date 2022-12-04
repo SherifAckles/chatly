@@ -10,7 +10,7 @@ import {
   serverTimestamp,
   Timestamp,
   updateDoc,
-} from "firebase/firestore/lite";
+} from "firebase/firestore";
 import { db, storage } from "../../firebase";
 import { v4 as uuid } from "uuid";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
@@ -18,20 +18,21 @@ import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 const Writemessage = () => {
 
 const [text, setText] = useState("");
-  const [img, setImg] = useState(null);
+  const [image, setImg] = useState(null);
 
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
 
   const handleSend = async () => {
-    if (img) {
+    if (image) {
       const storageRef = ref(storage, uuid());
 
-      const uploadTask = uploadBytesResumable(storageRef, img);
+      const uploadTask = uploadBytesResumable(storageRef, image);
 
       uploadTask.on(
         (error) => {
           //TODO:Handle Error
+           
         },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
@@ -78,10 +79,10 @@ const [text, setText] = useState("");
 
   return (
     <div className="writemessage">
-      <input type="text" placeholder="Send a message..." onChange={e=>setText(e.target.value)}/>
+      <input type="text" placeholder="Send a message..." onChange={(e)=>setText(e.target.value)}/>
       <div className="send">
         <img src={Attach} alt="" />
-        <input type="file" style={{ display: "none" }} id="file" onChange={e=>setImg(e.target.files[0])}/>
+        <input type="file" style={{ display: "none" }} id="file" onChange={(e)=>setImg(e.target.files[0])}/>
         <label htmlFor="file">
           <img src={Image} alt="" />
         </label>
