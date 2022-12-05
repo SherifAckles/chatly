@@ -15,8 +15,7 @@
 .user {
   display: flex;
   gap: 1rem;
-  position: absolute;
-  left: 14rem;
+  
 }
 
 .user-avatar {
@@ -25,10 +24,7 @@
   object-fit: cover;
   border-radius: 50%;
 }
-.btn {
-  position: absolute;
-  left: 17rem;
-}
+
 
 /* -----------Media Query----------- */
 /* MD devices */
