@@ -8,58 +8,59 @@
   color: var(--color-light-grey);
 }
 
-.logo-navbar{
+.logo-navbar {
   font-weight: bold;
 }
 
-.user{
+.user {
   display: flex;
   gap: 1rem;
+  position: absolute;
+  left: 14rem;
 }
 
-.user-avatar{
+.user-avatar {
   width: 35px;
   height: 35px;
   object-fit: cover;
   border-radius: 50%;
 }
-
+.btn {
+  position: absolute;
+  left: 17rem;
+}
 
 /* -----------Media Query----------- */
 /* MD devices */
 @media screen and (max-width: 1024px) {
-
-
-  .navbar-container{
+  .navbar-container {
     height: 6rem;
   }
-  .logo-navbar{
+  .logo-navbar {
     position: absolute;
     bottom: 25px;
     border: 1px solid var(--color-bg-light);
     padding: 0.3rem;
     border-radius: 10px;
-   }
+  }
 }
 
 /* SM devices */
 @media screen and (max-width: 600px) {
-.navbar-container{
-  height: 10rem;
-}
+  .navbar-container {
+    height: 10rem;
+  }
 
-
-.user-avatar{
-  position: absolute;
-  top: 10px;
-  left:40%;
-}
- .logo-navbar{
-  display: none;
- }
-.btn{
-  position: absolute;
-  bottom: 10px;
-}
-
+  .user-avatar {
+    position: absolute;
+    top: 10px;
+    left: 40%;
+  }
+  .logo-navbar {
+    display: none;
+  }
+  .btn {
+    position: absolute;
+    bottom: 10px;
+  }
 }
