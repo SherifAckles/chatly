@@ -22,6 +22,18 @@ html {
 img {
   display: block;
   width: 100%;
-  object-fit: cover;
   border-radius: 50%;
+  object-fit: cover;
+}
+
+
+/* -----------Media Query----------- */
+/* MD devices */
+@media screen and (max-width: 1024px) {
+  
+}
+
+/* SM devices */
+@media screen and (max-width: 600px) {
+ 
 }

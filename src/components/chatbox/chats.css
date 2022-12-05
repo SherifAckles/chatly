@@ -1,0 +1,13 @@
+@media screen and (max-width: 600px) {
+
+    .userChatInfo span {
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .userChat img{
+        width: 35px ;
+        height: 35px !important;
+        border-end-end-radius: 50%;
+        object-fit: cover ;
+    }
+}

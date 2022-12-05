@@ -22,3 +22,32 @@
   height: 35px;
   object-fit: cover;
 }
+
+
+/* -----------Media Query----------- */
+/* MD devices */
+@media screen and (max-width: 1024px) {
+  
+}
+
+/* SM devices */
+@media screen and (max-width: 600px) {
+.navbar-container{
+  height: 10rem;
+}
+
+
+.user-avatar{
+  position: absolute;
+  top: 10px;
+  left:40%;
+}
+ .logo-navbar{
+  display: none;
+ }
+.btn{
+  position: absolute;
+  bottom: 10px;
+}
+
+}

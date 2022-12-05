@@ -14,3 +14,10 @@
   border-radius: 1rem;
   overflow: hidden;
 }
+
+/* SM devices */
+@media screen and (max-width: 600px) {
+  .container-home {
+    width: 90%;
+    }
+}

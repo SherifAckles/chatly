@@ -2,3 +2,17 @@
   flex: 1;
   background-color:var(--color-bg-sec);
 }
+
+/* -----------Media Query----------- */
+/* MD devices */
+@media screen and (max-width: 1024px) {
+  
+}
+
+/* SM devices */
+@media screen and (max-width: 600px) {
+  .sidebar {
+    width: 50%;
+    position: relative;
+    }
+}
